@@ -1,0 +1,71 @@
+public class Conversao {
+	
+	
+	//Conversao de binario para decimal
+	
+	public void converteBinDec(int nrbinario){
+		
+		String str=nrbinario+"";
+		int valoraux=1;
+		
+		System.out.println(str);
+		
+		for(int i=str.length(); i>0; i--){
+			System.out.println(str.length());
+			if(str.indexOf(str,i)==1){
+				System.out.println(i);
+				valoraux=potencia(2,i);
+			}
+		}
+		System.out.println("o seu número a converter é o:"+valoraux);
+	}
+	
+	
+	//Conversao de decimal para binario
+
+	public void converteDecBin(int nrdecimal){
+		
+		String str = "";
+		
+		for(int i=nrdecimal; i>=1; i=i/2){
+		
+			if(i%2==0){
+				str+="0";
+			
+			}else{
+				str+="1";
+			}
+		}
+		str=reverse(str);
+		System.out.println("o seu número a converter é o:"+ str);
+	}
+	
+	//Metodo auxiliar para inverter strings
+	public static String reverse(String input){
+		
+	    char[] in = input.toCharArray();
+	    int begin=0;
+	    int end=in.length-1;
+	    char temp;
+	    while(end>begin){
+	        temp = in[begin];
+	        in[begin]=in[end];
+	        in[end] = temp;
+	        end--;
+	        begin++;
+	    }
+	    return new String(in);
+	}
+
+	//Método auxiliar para calcular a potência
+	public int potencia(int numero, int nrpotencia){
+		
+		int resultado=1;
+		for(int i=nrpotencia; i>=1; i--){
+			resultado*=numero;	
+			System.out.println(i);
+		}
+		return resultado;
+	}
+	
+}
